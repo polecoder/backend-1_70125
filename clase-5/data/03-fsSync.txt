@@ -1,0 +1,2 @@
+Hola mundo sincronico!
+Adios mundo sincronico!

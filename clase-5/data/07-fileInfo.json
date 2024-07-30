@@ -1,0 +1,16 @@
+{
+  "size": 227,
+  "string": "{\n  \"name\": \"clase-5\",\n  \"version\": \"1.0.0\",\n  \"main\": \"01-sincrono.js\",\n  \"scripts\": {\n    \"test\": \"echo \\\"Error: no test specified\\\" && exit 1\"\n  },\n  \"keywords\": [],\n  \"author\": \"\",\n  \"license\": \"ISC\",\n  \"description\": \"\"\n}\n",
+  "JSON": {
+    "name": "clase-5",
+    "version": "1.0.0",
+    "main": "01-sincrono.js",
+    "scripts": {
+      "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "description": ""
+  }
+}
