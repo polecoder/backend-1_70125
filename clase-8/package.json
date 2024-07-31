@@ -1,0 +1,17 @@
+{
+  "name": "clase-8",
+  "version": "1.0.0",
+  "main": "01-router.js",
+  "scripts": {
+    "dev": "node --watch ./01-router.js"
+  },
+  "type": "module",
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "express": "^4.19.2",
+    "multer": "^1.4.5-lts.1"
+  }
+}
