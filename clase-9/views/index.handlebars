@@ -1,0 +1,13 @@
+<div>
+  <h1>Bienvenido {{user.name}}</h1>
+  {{! Esto es un ejemplo de como usar condicionales en handlebars }}
+  {{#if isAdmin}}
+    {{! Esto es un ejemplo de como usar iterables en handlebars }}
+    {{#each users}}
+      <p>{{this.name}}</p>
+      <p>{{this.age}}</p>
+    {{/each}}
+  {{else}}
+    <p>No tienes permisos para ver los usuarios</p>
+  {{/if}}
+</div>
