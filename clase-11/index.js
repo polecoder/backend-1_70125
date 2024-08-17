@@ -11,30 +11,23 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
 const app = express();
+// Guardo el puerto de esta forma para preparar el servidor para subirlo a la nube
+const port = process.env.port || 8080;
 
-const httpServer = app.listen(8080, () => {
-  console.log("Server started at http://localhost:8080");
-});
+const httpServer = app.listen(port, () => {});
+
+let messages = [];
 
 const socketServer = new Server(httpServer);
-
 socketServer.on("connection", (socket) => {
   console.log("New connection", socket.id);
-  socket.on("mensaje", (data) => {
-    console.log(`Mensaje recibido desde el cliente ${socket.id}: ${data}`);
+
+  // Escuchamos el evento "message", que llega con un mensaje escrito por el usuario
+  socket.on("message", (data) => {
+    messages.push(data);
+    socketServer.emit("messageLogs", messages);
+    console.log(messages);
   });
-
-  socket.emit("mensaje", "Hola desde el servidor!");
-
-  socket.broadcast.emit(
-    "mensajeGeneral",
-    "Saludos a todos los clientes conectados menos al que envio el mensaje!"
-  );
-
-  socketServer.emit(
-    "mensajeGeneral",
-    "Este mensaje es global y lo reciben todos los clientes conectados!"
-  );
 });
 
 // Para configurar la carpeta public como carpeta de recursos estaticos
